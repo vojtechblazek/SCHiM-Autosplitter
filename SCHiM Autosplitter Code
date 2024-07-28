@@ -22,9 +22,9 @@ update{
 }
 
 split{
-		if (current.chapter == old.chapter + 1 && vars.shouldSplit == true){	
-			return true;
-		}
+	if (current.chapter == old.chapter + 1 && vars.shouldSplit == true){	
+		return true;
+	}
 }
 
 reset{
