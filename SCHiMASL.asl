@@ -12,7 +12,7 @@ init{
 
 start{
 	if(current.chapter == 1 && old.chapter == 0){
-        return true;
+        	return true;
     }
 }
 
