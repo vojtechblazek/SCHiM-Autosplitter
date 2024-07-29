@@ -1,5 +1,5 @@
 //SCHiM AUTOSPLITTER v1.0.2 by vojtechblazek
-//date 28. 7. 2024
+//date 29. 7. 2024
 
 state("SCHiM"){
 int chapter: "GameAssembly.dll", 0x01F7A7A0, 0xB8, 0x64;
