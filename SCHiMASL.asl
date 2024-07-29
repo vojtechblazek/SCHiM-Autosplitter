@@ -1,8 +1,9 @@
-//SCHiM AUTOSPLITTER v1.0.1 by vojtechblazek
+//SCHiM AUTOSPLITTER v1.0.2 by vojtechblazek
 //date 28. 7. 2024
 
 state("SCHiM"){
 int chapter: "GameAssembly.dll", 0x01F7A7A0, 0xB8, 0x64;
+int loadingScreen: "UnityPlayer.dll", 0x01CF6638, 0x158, 0x0, 0x0, 0x78, 0x0, 0x100, 0x1E0;
 }
 
 init{
@@ -12,7 +13,7 @@ init{
 
 start{
 	if(current.chapter == 1 && old.chapter == 0){
-        	return true;
+    	return true;
     }
 }
 
@@ -21,8 +22,13 @@ update{
 	else{vars.shouldSplit = true;}
 }
 
+isLoading{
+	if(current.loadingScreen == 1){return true;}
+	else{return false;}
+}
+
 split{
-	if (current.chapter == old.chapter + 1 && vars.shouldSplit == true){	
+	if (current.chapter != old.chapter && vars.shouldSplit == true){	
 		return true;
 	}
 }
